@@ -34,7 +34,7 @@ parser.add_argument("--n_downsample", type=int, default=2, help="number downsamp
 parser.add_argument("--dim", type=int, default=32, help="number of filters in first encoder layer")
 
 opt = parser.parse_args()
-print(opt) # test
+print(opt)
 
 assert opt.wav or opt.wavdir , 'Please specify an input wav file or directory'
 assert not opt.wav or not opt.wavdir, 'Cannot specify both wav and wavdir, choose one'
@@ -147,4 +147,3 @@ if opt.wavdir:
     for i, wav in enumerate(audio_files):
         print('[File %d/%d]' % (i+1, len(audio_files)))
         audio_infer(wav)
-        
